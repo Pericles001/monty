@@ -1,7 +1,4 @@
-/*
- * File: tokenize_string.c
- * Auth: Bennett Dixon
- */
+
 
 #include <stdlib.h>
 
