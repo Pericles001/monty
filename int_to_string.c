@@ -1,4 +1,7 @@
-
+/*
+ * File: int_to_string.c
+ * Auth: Bennett Dixon
+ */
 
 #include <stdlib.h>
 
@@ -95,4 +98,3 @@ void fill_numbase_buff(unsigned int num, unsigned int base,
 		i--;
 	}
 }
-

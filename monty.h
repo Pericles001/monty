@@ -1,5 +1,5 @@
-#ifndef _MONTY_
-#define _MONTY_
+#ifndef __MONTY_H__
+#define __MONTY_H__
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,7 +9,7 @@
 #define QUEUE 1
 #define DELIMS " \n\t\a\b"
 
-/** GLOBAL OPCODE TOKENS */
+/* GLOBAL OPCODE TOKENS */
 extern char **op_toks;
 
 /**
@@ -19,13 +19,13 @@ extern char **op_toks;
  * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -34,15 +34,15 @@ typedef struct stack_s
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
- * for stack, queues, LIFO, FIFO
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/** PRIMARY INTERPRETER FUNCTIONS */
+/* PRIMARY INTERPRETER FUNCTIONS */
 void free_stack(stack_t **stack);
 int init_stack(stack_t **stack);
 int check_mode(stack_t *stack);
@@ -51,7 +51,7 @@ unsigned int token_arr_len(void);
 int run_monty(FILE *script_fd);
 void set_op_tok_error(int error_code);
 
-/** OPCODE FUNCTIONS */
+/* OPCODE FUNCTIONS */
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
 void monty_pint(stack_t **stack, unsigned int line_number);
@@ -69,10 +69,12 @@ void monty_rotl(stack_t **stack, unsigned int line_number);
 void monty_rotr(stack_t **stack, unsigned int line_number);
 void monty_stack(stack_t **stack, unsigned int line_number);
 void monty_queue(stack_t **stack, unsigned int line_number);
-/** CUSTOM STANDARD LIBRARY FUNCTIONS */
+
+/* CUSTOM STANDARD LIBRARY FUNCTIONS */
 char **strtow(char *str, char *delims);
 char *get_int(int n);
-/** ERROR MESSAGES AND ERROR CODE */
+
+/* ERROR MESSAGES & ERROR CODES */
 int usage_error(void);
 int malloc_error(void);
 int f_open_error(char *filename);
@@ -84,4 +86,4 @@ int short_stack_error(unsigned int line_number, char *op);
 int div_error(unsigned int line_number);
 int pchar_error(unsigned int line_number, char *message);
 
-#endif
+#endif /* __MONTY_H__ */

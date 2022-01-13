@@ -1,4 +1,8 @@
-
+/*
+ * File: monty_funcs_1.c
+ * Auth: Bennett Dixon
+ *       Brennan D Baraban
+ */
 
 #include "monty.h"
 
